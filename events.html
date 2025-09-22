@@ -1,0 +1,105 @@
+<!-- js-events -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #414141;
+        color: aliceblue;
+    }
+
+    .container {
+        display: flex;
+        font-size: 20px;
+    }
+
+    .box {
+        height: 250px;
+        width: 250px;
+        border: 5px solid blueviolet;
+    }
+    a{
+        font-size: 30px;
+    }
+</style>
+
+<body>
+    <div class="container" id="container">
+        <div class="box box1" id="box1">box1</div>
+        <!-- onclick="alert('This is box 1')" -->
+        <!-- don't enject event directly in html -->
+        <div class="box box2" id="box2">box2</div>
+        <div class="box box3" id="box3">box3</div>
+        <div class="box box4" id="box4">box4</div>
+        <div class="box box5" id="box5">box5</div>
+    </div>
+      <a href="https://www.google.com/" id="google">Google</a>
+</body>
+
+<script>
+    //  in js events run sequencially 
+    // !st: way
+    //   document.getElementById('box2').onclick = function(){
+    //     alert("box 2 clicked")
+    //   }  best way to use event listners because eventListners gave more information and propogation
+
+//  2nd: way
+document.getElementById('box3').addEventListener("click", ()=>{
+    alert("box 3 clicked")
+})
+
+// attacEvent() use in early days 
+// jQuerry -on
+
+// Evnt Object
+document.getElementById('box4').addEventListener("click", (e)=>{
+    console.log(e)
+}, false)
+
+// -------reading material ------------
+// type
+// timeStamp
+// defaultPrevented
+// target
+// toElement
+// sourceElement
+// currentTarget
+// client --clientX --clientY --screenX --screenY
+// altkey, ctrlkey, shiftkey, keyCode
+
+// ----------Bubbling ------------
+document.getElementById('container').addEventListener("click", (e)=>{
+    console.log("images container clicked")
+}, false)
+  //⬆️ here default behaviour of event propergation(false) is event bubbling --- button to top --first inside than outside 
+
+//   ---------Capturing----------
+document.getElementById('box5').addEventListener("click", (e)=>{
+    console.log("box 5 clicked")
+    e.stopPropagation() // stop event propagation 
+}, false)
+   //⬆️ here default behaviour of event propergation(true) is event capturing --- top to bottom --first outside than inside 
+
+// ---- if we want to achieve bubbling and capturing behaviour you must set 3rd parameter (true or false) in both parent and child 
+// -----if we want that parent or child dont pass event to each other we can use e.stopPropagation()----here (e) is event  
+
+// ------------PreventDefault=--------
+document.getElementById("google").addEventListener("click", (e)=>{
+    console.log("google clicked");
+    e.preventDefault()
+})
+
+// ---------task is to hide divs
+document.querySelector('#container').addEventListener('click', (e)=>{
+    console.log(e.target)
+    let removeIt = e.target
+    removeIt.remove()
+})
+</script>
+
+</html>

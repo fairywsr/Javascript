@@ -66,3 +66,5 @@ console.log(typeof bookData2.getAuthorName)
 
 console.log(Object.keys(bookData2)) // returns Array of keys
 console.log(Object.values(bookData2)) // return array of values 
+
+// export {bookData};

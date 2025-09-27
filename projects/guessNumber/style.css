@@ -1,0 +1,31 @@
+body{
+    background-color: #212121;
+    color: aliceblue;
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#subt{
+    background-color: rgba(28, 11, 11, 0.468);
+    color: aliceblue;
+    padding: 15px 10px;
+    border-radius: 30px;
+    text-transform: capitalize;
+}
+#guessField{
+    width: 200px;
+    height: 50px;
+    outline: none;
+    font-size: 20px;
+}

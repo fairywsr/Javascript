@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg-Color-Changer</title>
+</head>
+<style>
+    body{
+        background-color: #212121;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 90vh;
+        gap: 20px;
+    }
+    button{
+        padding: 15px 25px;
+        text-transform: capitalize;
+        border-radius: 30px;
+        outline: none;
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: 500;
+    }
+    button:first-child{
+        background-color: white;
+    }
+    button:nth-child(2){
+        background-color: orange;
+    }
+    button:nth-child(3){
+        background-color: blue;
+    }
+    button:nth-child(4){
+        background-color: red;
+    }
+    button:nth-child(5){
+        background-color: purple;
+    }
+    button:nth-child(6){
+        background-color: green;
+    }
+    button:nth-child(7){
+        background-color: yellow;
+    }
+    button:last-child{
+        /* background-color: #212121; */
+        background-color: black;
+        color: aliceblue;
+    }
+</style>
+<body>
+    <div class="container">
+        <button>white</button>
+        <button>orange</button>
+        <button>blue</button>
+        <button>red</button>
+        <button>purple</button>
+        <button>green</button>
+        <button>yellow</button>
+        <button>black</button> <!--121212--> 
+    </div>
+</body>
+
+<!-- Javascript -->
+<script>
+// select body
+const body = document.body
+console.log(body)
+
+// select all buttons
+const buttons = document.querySelectorAll("button")
+console.log(buttons)
+
+function bgChange(value) {
+  body.style.backgroundColor = value
+}
+
+let btnText = ""
+
+buttons.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    btnText = event.target.textContent 
+
+    // change background of whole page
+    bgChange(btnText)
+  })
+})
+
+
+
+
+
+</script>
+</html>

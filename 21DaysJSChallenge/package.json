@@ -2,7 +2,7 @@
   "name": "21daysjschallenge",
   "version": "1.0.0",
   "description": "",
-  "main": "Day1.js",
+  "main": "Day2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

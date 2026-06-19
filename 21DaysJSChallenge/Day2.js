@@ -61,4 +61,9 @@ function checkVowel(char) {
 // console.log(checkVowel("1"));
 
 //5------Check if a Year is a Leap Year
-function checkLeapYear() {}
+function checkLeapYear(year) {
+  if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+    return `${year} is a leap year`;
+  }
+  return `${year} is not a leap year`;
+}

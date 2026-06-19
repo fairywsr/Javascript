@@ -38,6 +38,27 @@ function calculateUnits(units) {
   }
   return totalBill;
 }
-console.log(calculateUnits(400));
+// console.log(calculateUnits(400));
 
-//2------Check if a Number is Positive, Negative, or Zero
+//4------Check if a Character is a Vowel or Consonant
+function checkVowel(char) {
+  const smallChar = char.toLowerCase();
+  console.log(smallChar);
+  if (
+    smallChar === "a" ||
+    smallChar === "e" ||
+    smallChar === "i" ||
+    smallChar === "o" ||
+    smallChar === "u"
+  ) {
+    return `${char} is Vowel`;
+  } else if (/[a-z]/.test(smallChar)) {
+    return `${char} is Consonant`;
+  } else {
+    return "Invalid Character";
+  }
+}
+// console.log(checkVowel("1"));
+
+//5------Check if a Year is a Leap Year
+function checkLeapYear() {}

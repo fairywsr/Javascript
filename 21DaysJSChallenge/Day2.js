@@ -67,3 +67,50 @@ function checkLeapYear(year) {
   }
   return `${year} is not a leap year`;
 }
+
+//6------Check if a Character is Uppercase, Lowercase, Digit, or Special Character
+
+function checkChar(char) {
+  if (typeof char !== "string" || char.length !== 1 || char === "") {
+    return `${char} is not a valid Character`;
+  }
+  if (/^[A-Z]$/.test(char)) {
+    return `${char} is UpperCase`;
+  } else if (/^[a-z]$/.test(char)) {
+    return `${char} is lowerCase`;
+  } else if (/^[0-9]$/.test(char)) {
+    return `${char} is Number`;
+  } else {
+    return `${char} is invalid character`;
+  }
+}
+
+//7------Check Triangle Type Using Sides and Angles
+function checkTriangleType(a, b, c) {
+  if (a === b && a === c && b === c) {
+    return `(All sides are equal ) Equilateral Triangle`;
+  } else if (
+    (a !== b || a !== c || b !== c) &&
+    (a === b || a === c || b === c)
+  ) {
+    return `(Two sides equal one is different) Isosceles Triangle:`;
+  } else if (a !== b && a !== c && b !== c) {
+    return `(All sides different) Scalene Triangle`;
+  }
+}
+
+//8------Calculate Income Tax Based on Slabs
+function calculateTax(income) {
+  const incomeNum = Number(income);
+  let tax = 0;
+
+  if (incomeNum <= 250000) {
+    return `No Tax`;
+  } else if (incomeNum > 250000 && incomeNum <= 500000) {
+    return (tax += (5 / 100) * incomeNum);
+  } else if (incomeNum > 500000 && incomeNum <= 1000000) {
+    return (tax += (20 / 100) * incomeNum);
+  } else {
+    return (tax += (30 / 100) * incomeNum);
+  }
+}

@@ -19,3 +19,4 @@ for (i = rows; i >= 1; i--) {
   }
   console.log(rowStr);
 }
+//1----Print Pyramid Pattern

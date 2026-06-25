@@ -37,26 +37,26 @@ const products = [
 ];
 
 // for of
-// for (product of products) {
-//   console.log(product.title, product.price, product.color);
-// }
+for (product of products) {
+  console.log(product.title, product.price, product.color);
+}
 
 // map
-// const mapProd = products.map((product) => {
-//   return (product.price, product.color, product.stock);
-// });
+const mapProd = products.map((product) => {
+  return (product.price, product.color, product.stock);
+});
 
-// console.log(mapProd);
+console.log(mapProd);
 
 // filter
-// const filterProd = products.filter((product) => {
-//   return product.price >= 4000;
-// });
-// console.log(filterProd);
+const filterProd = products.filter((product) => {
+  return product.price >= 4000;
+});
+console.log(filterProd);
 
-// filterProd.map((prod) => {
-//   console.log(prod.color);
-// });
+filterProd.map((prod) => {
+  console.log(prod.color);
+});
 
 // map + filter + reduce
 const total = products
@@ -68,3 +68,31 @@ const total = products
   })
   .reduce((acc, val) => acc + val.price, 0);
 console.log(total);
+
+// map + filter + reduce
+const digits = [8, 6, 9, 4, 23, 7, 5, 8];
+const mapDigit = digits.map((digit) => digit ** 3);
+const filDigit = mapDigit.filter((digit) => digit >= 350);
+const minusDigit = filDigit.map((digit) => digit - 7);
+const totalSum = minusDigit.reduce((sum, digit) => sum + digit, 0);
+console.log(totalSum);
+const students = [
+  {
+    name: "abc",
+    marks: 89,
+  },
+  {
+    name: "def",
+    marks: 49,
+  },
+  {
+    name: "ghi",
+    marks: 78,
+  },
+];
+
+// map + filter + reduce
+const totalMarks = students.reduce((acc, val) => acc + val.marks, 0);
+console.log(totalMarks);
+const average = totalMarks / students.length;
+console.log(`average ${average}`);

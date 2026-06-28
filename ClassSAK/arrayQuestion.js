@@ -17,8 +17,12 @@ for (let num of num1) {
 // console.log(bigNum);
 
 // ----Remove Duplicates
-const arr = [1, 2, 2, 3, 4, 4, 5];
-const remDuplicates = arr.map((num) => {});
+const arrR = [1, 2, 2, 3, 4, 4, 5];
+
+const remDuplicates = arrR.filter((num, index) => {
+  return arrR.indexOf(num) === index;
+});
+console.log(remDuplicates);
 
 // ----Print Months start witn M
 const months = ["January", "Feburary", "March", "April", "May", "December"];
@@ -52,6 +56,13 @@ const students = [
   },
 ];
 
-const adultStudents = students.filter((studen) => {
-    return studen.age >= 18;
-  }),
+const adultStudents = students.filter((student) => {
+  return student.age >= 18;
+});
+
+// . Flatten a Nested Array (1 Level Deep)
+const arr = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
+];

@@ -1,8 +1,8 @@
-// function printName(name) {
-//   console.log(name);
-// }
+function printName(name) {
+  console.log(name);
+}
 
-// printName("faria");
+printName("faria");
 
 const table = (table, limit) => {
   for (let i = 1; i <= limit - 1 - 1; i++) {
